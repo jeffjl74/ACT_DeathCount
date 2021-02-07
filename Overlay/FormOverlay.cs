@@ -238,6 +238,8 @@ namespace Overlay
             if (arg != null)
             {
                 this.Visible = arg.visible;
+                if(arg.visible)
+                    this.TopMost = true; //just to make sure
             }
         }
 
