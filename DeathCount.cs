@@ -196,8 +196,8 @@ namespace ACT_Plugin
             ActGlobals.oFormActMain.AfterCombatAction += oFormActMain_AfterCombatAction;
             ActGlobals.oFormActMain.XmlSnippetAdded += oFormActMain_XmlSnippetAdded;
             // If ACT is set to automatically check for updates, check for updates to the plugin
-            //if (ActGlobals.oFormActMain.GetAutomaticUpdatesAllowed())
-            //    new Thread(new ThreadStart(oFormActMain_UpdateCheckClicked)).Start();	// If we don't put this on a separate thread, web latency will delay the plugin init phase
+            if (ActGlobals.oFormActMain.GetAutomaticUpdatesAllowed())
+                new Thread(new ThreadStart(oFormActMain_UpdateCheckClicked)).Start();	// If we don't put this on a separate thread, web latency will delay the plugin init phase
 
             lblStatus.Text = "Plugin started";
         }
@@ -216,7 +216,7 @@ namespace ACT_Plugin
             ActGlobals.oFormActMain.OnLogLineRead -= oFormActMain_OnLogLineRead;
             ActGlobals.oFormActMain.LogFileChanged -= oFormActMain_LogFileChanged;
             ActGlobals.oFormActMain.XmlSnippetAdded -= oFormActMain_XmlSnippetAdded;
-            //ActGlobals.oFormActMain.UpdateCheckClicked -= oFormActMain_UpdateCheckClicked;
+            ActGlobals.oFormActMain.UpdateCheckClicked -= oFormActMain_UpdateCheckClicked;
 
             lblStatus.Text = "Plugin Exited";
         }
@@ -299,7 +299,7 @@ namespace ACT_Plugin
         void oFormActMain_UpdateCheckClicked()
         {
             
-            int pluginId = 4200000;
+            int pluginId = 82;
             try
             {
                 Version localVersion = this.GetType().Assembly.GetName().Version;
