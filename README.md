@@ -32,6 +32,7 @@ Lines prior to the death are added or subtracted when the window is re-sized.
 Plugin setup is accomplished on the ACT plugin tab. Here the user can select how
 the audio and visual alerts occur and establish warning levels for particular mobs.
 Help is provided in the bottom pane when the mouse is positioned over a control.
+
 ![Plugin](images/plugin.PNG?raw=true)
 
 
