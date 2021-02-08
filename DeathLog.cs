@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Overlay
+namespace DeathCount_Plugin
 {
     /// <summary>
     /// Form to show the log lines immediately preceeding a death.

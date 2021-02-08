@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathCount", "DeathCount.csproj", "{ABECBE45-2C10-4092-8EDE-9806FABB3298}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overlay", "Overlay\Overlay.csproj", "{044FE152-A6C1-4D92-A630-4620251AEC3F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{ABECBE45-2C10-4092-8EDE-9806FABB3298}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABECBE45-2C10-4092-8EDE-9806FABB3298}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABECBE45-2C10-4092-8EDE-9806FABB3298}.Release|Any CPU.Build.0 = Release|Any CPU
-		{044FE152-A6C1-4D92-A630-4620251AEC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{044FE152-A6C1-4D92-A630-4620251AEC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{044FE152-A6C1-4D92-A630-4620251AEC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{044FE152-A6C1-4D92-A630-4620251AEC3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

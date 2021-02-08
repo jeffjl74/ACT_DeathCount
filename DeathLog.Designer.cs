@@ -1,4 +1,4 @@
-﻿namespace Overlay
+﻿namespace DeathCount_Plugin
 {
     partial class DeathLog
     {

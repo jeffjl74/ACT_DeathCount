@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace ACT_Plugin
+namespace DeathCount_Plugin
 {
     public partial class DeathCount
     {

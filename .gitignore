@@ -1,11 +1,6 @@
-/Overlay/obj/Debug
 /.vs/DeathCount/v15
-/Overlay/bin/Debug/Advanced Combat Tracker.exe
-/Overlay/bin/Debug/Advanced Combat Tracker.exe.config
-/Overlay/bin/Debug/Advanced Combat Tracker.xml
-/Overlay/bin/Debug
-/Overlay/obj/Release
-/bin/Debug
+/Overlay
+/bin
 /obj
 /.vs/DeathCount/v16
 /images/death_count_overlay.PNG

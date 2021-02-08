@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Advanced_Combat_Tracker;
 
-namespace Overlay
+namespace DeathCount_Plugin
 {
     public class DeathData
     {

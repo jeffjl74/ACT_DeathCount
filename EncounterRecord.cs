@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advanced_Combat_Tracker;
-using Overlay;
+using DeathCount_Plugin;
 
 namespace DeathCount_Plugin
 {

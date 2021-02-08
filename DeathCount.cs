@@ -1,6 +1,4 @@
 ﻿using Advanced_Combat_Tracker;
-using DeathCount_Plugin;
-using Overlay;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -16,13 +14,8 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
 
-[assembly: AssemblyDescription("ACT plugin that monitors deaths during an encounter")]
-[assembly: AssemblyCompany("Mineeme of Maj'Dul")]
-[assembly: AssemblyProduct("DeathCount")]
-[assembly: AssemblyVersion("1.0.0.0")]
 
-
-namespace ACT_Plugin
+namespace DeathCount_Plugin
 {
     public partial class DeathCount : UserControl, IActPluginV1
     {
@@ -93,8 +86,6 @@ namespace ACT_Plugin
 
         public DeathCount()
         {
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-
             InitializeComponent();
 
             Consumer();
@@ -255,50 +246,10 @@ namespace ACT_Plugin
         }
 
         /// <summary>
-        /// Load the overlay form dll
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        public Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            string name = new AssemblyName(args.Name).Name;
-            if (name.ToLower().Contains("overlay"))
-            {
-                //look for the dll in our resources
-                string[] res = Assembly.GetExecutingAssembly().GetManifestResourceNames();
-                List<string> list = new List<string>(res);
-                String resourceName = name + ".dll";
-                string match = list.Find(s => s.Contains(name));
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(match))
-                {
-                    if (stream != null)
-                    {
-                        Byte[] assemblyData = new Byte[stream.Length];
-                        stream.Read(assemblyData, 0, assemblyData.Length);
-                        Assembly assy = Assembly.Load(assemblyData);
-                        return assy;
-                    }
-                }
-
-                //fallback - look for the dll file in the plugin directory
-                string path = ActGlobals.oFormActMain.PluginGetSelfData(this).pluginFile.DirectoryName;
-                string dll = Path.Combine(path, name + ".dll");
-                if (File.Exists(dll))
-                {
-                    Assembly assy = Assembly.Load(File.ReadAllBytes(dll));
-                    return assy;
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
         /// Check for whether to update the plugin
         /// </summary>
         void oFormActMain_UpdateCheckClicked()
         {
-            
             int pluginId = 82;
             try
             {

@@ -1,6 +1,6 @@
 ﻿using Advanced_Combat_Tracker;
 
-namespace Overlay
+namespace DeathCount_Plugin
 {
     /// <summary>
     /// Data about a death.
