@@ -1003,10 +1003,10 @@ namespace DeathCount_Plugin
              @"{\rtf1\ansi\cf0\b0\ul0"
              + @"{\b\ul Announce Selection}\line "
              + @"{\b Note:} Announcements will include the death of a player pet.\line\line"
-             + @"{\b Announce All} Enables an annoucement for each death for every encounter. "
+             + @"{\b Announce All} - Enables an annoucement for each death for every encounter. "
              + @"This setting may be used to alert for the a need for a resurrection.\line "
-             + @"{\b Announce Tracked} Enables the annoucement for each death only while fighting a name in the {\b Tracked Names} list.\line "
-             + @"{\b Announce None} Disable audio announcement of {\b Who Died}. "
+             + @"{\b Announce Tracked} - Enables the annoucement for each death only while fighting a name in the {\b Tracked Names} list.\line "
+             + @"{\b Announce None} - Disable audio announcement of {\b Who Died}. "
              + @"}";
             richTextBox1.Rtf = text;
         }
@@ -1016,10 +1016,10 @@ namespace DeathCount_Plugin
             const string text =
               @"{\rtf1\ansi\cf0\b0\ul0"
              + @"{\b\ul Auto Show Selection}\line\line "
-             + @"{\b Auto Show All} Displays the mini window upon a death for every encounter.\line "
-             + @"{\b Auto Show Tracked} Displays the mini window when fighting a mob in the {\b Tracked Names} list "
+             + @"{\b Auto Show All} - Displays the mini window upon a death for every encounter and closed after a flawless encounter.\line "
+             + @"{\b Auto Show Tracked} - Displays the mini window when fighting a mob in the {\b Tracked Names} list "
              + @"and closed after a non-tracked fight.\line "
-             + @"{\b Disable Auto Show} The mini window is not displayed. "
+             + @"{\b Disable Auto Show} - The mini window is not displayed. "
              + @"}";
             richTextBox1.Rtf = text;
         }
