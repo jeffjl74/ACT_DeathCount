@@ -127,6 +127,7 @@
             this.toolTip1.SetToolTip(this, "Double-click for cause of death. Right-click to remove a death.");
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormOverlay_FormClosing);
             this.Load += new System.EventHandler(this.FormOverlay_Load);
+            this.Shown += new System.EventHandler(this.FormOverlay_Shown);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panel1.ResumeLayout(false);

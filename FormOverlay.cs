@@ -68,6 +68,16 @@ namespace DeathCount_Plugin
         }
 
         /// <summary>
+        /// Set the form to top most
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormOverlay_Shown(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
+
+        /// <summary>
         /// Only hide it if the user "closes" the form
         /// </summary>
         /// <param name="sender"></param>

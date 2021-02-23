@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -145,6 +146,9 @@ namespace DeathCount_Plugin
             overlay = new FormOverlay();
             overlay.RemoveItemEvent += Overlay_RemoveItemEvent;
             overlay.UserHidesFormEvent += Overlay_UserHidesFormEvent;
+            //seems to help to "blink" a show, now, on the UI thread, to get TopMost to work consistantly
+            overlay.Show();
+            overlay.Hide();
 
             //annoucement timer
             timerAnnounce = new System.Timers.Timer();
@@ -213,7 +217,7 @@ namespace DeathCount_Plugin
         }
 
         /// <summary>
-        /// Watch for zone and character change
+        /// Watch for zone, character, and game status change
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -243,6 +247,18 @@ namespace DeathCount_Plugin
                 RebuildZoneMobs();
             }
 
+            if (!IsEq2Running() && bMiniIsVisible)
+                SetMiniVisible(false);
+
+        }
+
+        /// <summary>
+        /// Check if EQII game is running
+        /// </summary>
+        /// <returns>True if a game process is found</returns>
+        private bool IsEq2Running()
+        {
+            return Process.GetProcessesByName("EverQuest2").Length > 0 ? true : false;
         }
 
         /// <summary>
@@ -445,6 +461,8 @@ namespace DeathCount_Plugin
                             diedSignal.Set();
                             //tell the overlay
                             overlay.AddDeath(died);
+                            if (!bMiniIsVisible && ((bTrackMob && showState == ComboIndex.Tracked) || showState == ComboIndex.All))
+                                SetMiniVisible(true);
 
                             //if warnings enabled, warn regardless of time between announcements
                             if (bAnnounceWarningState && iDeathCount == iWarnLevel)
